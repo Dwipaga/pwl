@@ -4,7 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ArticleController;
-
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ProgramController;
+use App\Http\Controllers\ContactController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -16,8 +19,16 @@ use App\Http\Controllers\ArticleController;
 |
 */
 
-Route::get('/', [HomeController::class, 'home']);
+Route::get('/home', [HomeController::class, 'home']);
 
-Route::get('/about', [AboutController::class, 'about']);
+Route::get('/aboutus', [AboutController::class, 'about']);
 
 Route::get('/articles/{id}', [ArticleController::class, 'articles']);
+
+Route::get('/produk/{daftar_produk}', [ProductController::class, 'produk']);
+
+Route::get('/news/{nama_news}', [NewsController::class, 'news']);
+
+Route::get('/program/{nama_program}', [ProgramController::class, 'program']);
+
+Route::resource('/contact', ContactController::class);
