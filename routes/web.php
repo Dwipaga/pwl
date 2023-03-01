@@ -8,6 +8,11 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProgramController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProfilController;
+use App\Http\Controllers\PengalamanController;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,16 +24,21 @@ use App\Http\Controllers\ContactController;
 |
 */
 
-Route::get('/home', [HomeController::class, 'home']);
-
-Route::get('/aboutus', [AboutController::class, 'about']);
-
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/aboutus', [AboutController::class, 'index']);
 Route::get('/articles/{id}', [ArticleController::class, 'articles']);
-
-Route::get('/produk/{daftar_produk}', [ProductController::class, 'produk']);
-
-Route::get('/news/{nama_news}', [NewsController::class, 'news']);
-
-Route::get('/program/{nama_program}', [ProgramController::class, 'program']);
-
-Route::resource('/contact', ContactController::class);
+Route::prefix('produk')->group(function () {
+    Route::get('/', [ProductController::class, 'index']);
+    Route::get('/kertas', [ProductController::class, 'kertas']);
+    Route::get('/pulpen', [ProductController::class, 'pulpen']);
+});
+Route::get('/news/{nama_news}', [NewsController::class, 'index']);
+Route::prefix('program')->group(function () {
+    Route::get('/', [ProgramController::class, 'index']);
+    Route::get('/penghijauan', [ProgramController::class, 'penghijauan']);
+    Route::get('/konservasi', [ProgramController::class, 'konservasi']);
+});
+Route::get('/kontak', [ContactController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/profil', [ProfilController::class, 'index']);
+Route::get('/pengalaman', [PengalamanController::class, 'index']);

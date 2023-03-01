@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     //
-    function home()
+    function index()
     {
-        echo "Selamat Datang";
+        return view('Layout.template');
     }
 }
