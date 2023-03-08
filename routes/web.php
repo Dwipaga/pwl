@@ -11,6 +11,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\PengalamanController;
+use App\Http\Controllers\ArtikelModelController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -42,3 +43,4 @@ Route::get('/kontak', [ContactController::class, 'index']);
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/profil', [ProfilController::class, 'index']);
 Route::get('/pengalaman', [PengalamanController::class, 'index']);
+Route::get('/Artikel', [ArtikelModelController::class, 'index']);
