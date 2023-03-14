@@ -12,6 +12,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfilController;
 use App\Http\Controllers\PengalamanController;
 use App\Http\Controllers\ArtikelModelController;
+use App\Http\Controllers\HobiController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -44,3 +45,5 @@ Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/profil', [ProfilController::class, 'index']);
 Route::get('/pengalaman', [PengalamanController::class, 'index']);
 Route::get('/Artikel', [ArtikelModelController::class, 'index']);
+
+Route::get('/hobi', [HobiController::class, 'index']);
