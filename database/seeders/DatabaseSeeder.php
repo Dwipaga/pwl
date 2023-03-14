@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(ArtikelModelSeeder::class);
         // $this->call(HobiSeeder::class);
-        $this->call(MatakuliahSeeder::class);
-
+        // $this->call(MatakuliahSeeder::class);
+        $this->call(KeluargaSeeder::class);
     }
 }

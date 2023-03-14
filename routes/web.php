@@ -14,6 +14,7 @@ use App\Http\Controllers\PengalamanController;
 use App\Http\Controllers\ArtikelModelController;
 use App\Http\Controllers\HobiController;
 use App\Http\Controllers\MatakuliahController;
+use App\Http\Controllers\KeluargaController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -49,3 +50,4 @@ Route::get('/Artikel', [ArtikelModelController::class, 'index']);
 
 Route::get('/hobi', [HobiController::class, 'index']);
 Route::get('/matkul', [MataKuliahController::class, 'index']);
+Route::get('/keluarga', [KeluargaController::class, 'index']);

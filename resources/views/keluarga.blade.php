@@ -8,12 +8,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Matakuliah</h1>
+            <h1>Keluarga</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Matakuliah</li>
+              <li class="breadcrumb-item active">Keluarga</li>
             </ol>
           </div>
         </div>
@@ -41,14 +41,16 @@
           <table class="table table-bordered tabel-hover">
             <thead class="tabel">
                 <th class="text-center bg-secondary">ID</th>
-                <th class="text-center bg-secondary">Nama Matkul</th>
-                <th class="text-center bg-secondary">Nama Dosen</th>
+                <th class="text-center bg-secondary">Nama</th>
+                <th class="text-center bg-secondary">Jenis Kelamin</th>
+                <th class="text-center bg-secondary">Hubungan Keluarga</th>
             </thead>
-            @foreach ($matakuliah as $matkul)
+            @foreach ($keluarga as $keluarga)
             <tr>
-                <td>{{$matkul->id}}</td>
-                <td>{{$matkul->nama_matkul}}</td>
-                <td>{{$matkul->nama_dosen}}</td> 
+                <td>{{$keluarga->id}}</td>
+                <td>{{$keluarga->nama}}</td>
+                <td>{{$keluarga->jenis_kelamin}}</td> 
+                <td>{{$keluarga->hubungan}}</td>
              </tr>
             @endforeach
           </table>

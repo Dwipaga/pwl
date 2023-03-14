@@ -74,6 +74,12 @@
                 <p>Matakuliah</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="/keluarga" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Keluarga</p>
+              </a>
+            </li>
           </ul>
         </li>
       </ul>
