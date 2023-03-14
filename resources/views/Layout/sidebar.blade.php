@@ -62,6 +62,18 @@
                 <p>Pengalaman</p>
               </a>
             </li>
+            <li class="nav-item">
+              <a href="/hobi" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Hobi</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="/matkul" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Matakuliah</p>
+              </a>
+            </li>
           </ul>
         </li>
       </ul>
