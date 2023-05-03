@@ -17,6 +17,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\HobiController;
 use App\Http\Controllers\MatakuliahController;
 use App\Http\Controllers\KeluargaController;
+use App\Http\Controllers\MahasiswaController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -59,4 +60,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/matkul', [MataKuliahController::class, 'index']);
     Route::get('/keluarga', [KeluargaController::class, 'index']);
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::resource('/mahasiswa', MahasiswaController::class);
+    Route::resource('/hobi', HobiController::class);
+    Route::resource('/keluarga', KeluargaController::class);
+    Route::resource('/matakuliah', MatakuliahController::class);
 });

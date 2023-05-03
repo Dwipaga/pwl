@@ -82,6 +82,12 @@
             </li>
           </ul>
         </li>
+        <li class="nav-item">
+              <a href="{{ url('/mahasiswa')}}" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Mahasiswa</p>
+              </a>
+          </li>
       </ul>
     </nav>
     <!-- /.sidebar-menu -->

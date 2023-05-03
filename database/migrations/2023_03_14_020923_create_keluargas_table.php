@@ -14,21 +14,17 @@ return new class extends Migration
     public function up()
     {
         Schema::create('keluarga', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama', 100);
-            $table->enum('jenis_kelamin', ['laki-laki', 'perempuan']);
-            $table->string('hubungan', 100);
-            $table->timestamps();
+            $table->id('ktp');
+            $table->string('nama', 25);
+            $table->enum('jk', ['laki-laki', 'perempuan']);
+            $table->string('tempat_lahir', 20);
+            $table->date('tanggal_lahir');
+            $table->string('alamat', 500);
+            $table->integer('hp', false);
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
-        Schema::dropIfExists('keluargas');
+        Schema::dropIfExists('keluarga');
     }
 };

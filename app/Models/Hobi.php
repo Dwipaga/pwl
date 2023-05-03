@@ -9,4 +9,8 @@ class Hobi extends Model
 {
     use HasFactory;
     protected $table = 'hobi';
-}
+    protected $primaryKey = 'id';
+    protected $fillable = [
+        'nama_hobi'
+    ];
+};
