@@ -18,8 +18,21 @@ class MahasiswaModels extends Model
         'tempat_lahir',
         'tanggal_lahir',
         'alamat',
-        'hp'
+        'hp',
+        'kelas_id'
+
     ];
+
+    protected $guarded = ['id'];
+
+    public function kelas()
+    {
+        return $this->belongsTo(kelas::class);
+    }
+    public function matakuliah()
+    {
+        return $this->belongsToMany(Matkul::class, 'mahasiswa_matakuliah', 'mahasiswa_id', 'matakuliah_id')->withPivot('nilai');
+    }
 
 }
 
