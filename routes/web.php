@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
-use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ArticlesController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProgramController;
@@ -38,7 +38,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/', [HobiController::class, 'index']);
     Route::get('/home', [HomeController::class, 'index']);
     Route::get('/aboutus', [AboutController::class, 'index']);
-    Route::get('/articles/{id}', [ArticleController::class, 'articles']);
     Route::prefix('produk')->group(function () {
         Route::get('/', [ProductController::class, 'index']);
         Route::get('/kertas', [ProductController::class, 'kertas']);
@@ -65,4 +64,6 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('/keluarga', KeluargaController::class);
     Route::resource('/matakuliah', MatakuliahController::class);
     Route::get('/mahasiswa/{id}/khs', [MahasiswaController::class, 'showKhs']);
+    Route::resource('articles', ArticlesController::class);
+    Route::get('/article/cetak_pdf', [ArticlesController::class, 'cetak_pdf']);
 });
