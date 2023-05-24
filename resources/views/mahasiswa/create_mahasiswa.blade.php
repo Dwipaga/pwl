@@ -29,8 +29,8 @@
                     </button>
                 </div>
             </div>
-            <div class="card-body" style="margin-left: 250px;">
-                <form method="post" action="{{ $url_form }}">
+            <div class="card-body" style="margin-left: 50px;">
+                <form method="post" action="{{ $url_form }}" enctype="multipart/form-data">
                     @csrf
                     {!! (isset($mhs))? method_field('PUT') : '' !!}
 
@@ -97,6 +97,17 @@
                             <option value="{{ $kls->id }}">{{ $kls->nama_kelas }}</option>
                             @endforeach
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Foto</label>
+                        <input class="form-control @error('foto') is-invalid @else mb-3 @enderror" type="file" name="foto" value="{{ isset($mhs)? $mhs->foto : old('foto') }}" name="foto">
+                        @error('foto')
+                            <span class="error invalid-feedback">{{ $message }}</span>
+                        @enderror
+                        @if (isset($mhs))
+                            <p>Foto Sebelumnya</p>
+                            <img src="{{ asset($mhs->foto) }}" alt="" width="100px" style="overflow: ">
+                        @endif
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">submit</button>
 

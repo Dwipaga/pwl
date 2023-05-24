@@ -12,10 +12,10 @@ class Mahasiswa_Matkul extends Model
 
     public function mahasiswa()
     {
-        return $this->belongsTo(MahasiswaModel::class);
+        return $this->belongsTo(MahasiswaModels::class);
     }
     public function matakuliah()
     {
-        return $this->belongsTo(MataKuliahModel::class);
+        return $this->belongsTo(Matkul::class);
     }
 }
